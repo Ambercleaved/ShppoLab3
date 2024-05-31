@@ -76,14 +76,14 @@ public class SystemIterator implements Iterator<SystemBuilder> {
     }
     public void parallelIterateAndBuild(ComponentVisitor visitor, int numThreads) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(numThreads);
-        CompletionService<PcSystem> completionService = new ExecutorCompletionService<>(executor);
+            CompletionService<PcSystem> completionService = new ExecutorCompletionService<>(executor);
 
         for (int i = 0; i < numThreads; i++) {
             completionService.submit(() -> {
                 while (hasNext()) {
                     SystemBuilder builder = next();
                     if (builder != null) {
-                        return builder.build(); // Build the system and return
+                        return builder.build();
                     }
                 }
                 return null;
@@ -95,7 +95,7 @@ public class SystemIterator implements Iterator<SystemBuilder> {
             try {
                 PcSystem system = future.get();
                 if (system != null) {
-                    system.accept(visitor); // Output system details using the ComponentVisitor
+                    system.accept(visitor);
                 }
             } catch (ExecutionException e) {
                 e.printStackTrace();
