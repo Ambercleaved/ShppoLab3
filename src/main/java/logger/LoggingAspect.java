@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Pointcut("execution(* com.lab2.*.*(..))||execution(* logger.*.*(..))")
+    @Pointcut("execution(* com.lab3.*.*(..))||execution(* logger.*.*(..))")
     public void allMeth() {}
 
     @Before("allMeth()")

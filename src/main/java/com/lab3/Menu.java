@@ -31,6 +31,8 @@ public class Menu {
         CPU cpu3 = Factory.createCPU("Intel","I7 - 11500K",10,"Lga",4.2);
         GPU gpu3 = Factory.createGPU("Nvidia", "GTX 1660","pci 3.0", 10000);
         Motherboard mb3 = Factory.createMotherboard("Lenovo","L 564","pci 3.0","Lga");
+
+
         systemFacade.addCPU(cpu1);
         systemFacade.addCPU(cpu2);
         systemFacade.addCPU(cpu3);

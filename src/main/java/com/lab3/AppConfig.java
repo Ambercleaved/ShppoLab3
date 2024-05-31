@@ -28,4 +28,8 @@ public class AppConfig {
     public Menu menu(SystemFacade systemFacade, List<Motherboard> motherboards, List<CPU> cpus, List<GPU> gpus) {
         return new Menu(systemFacade, motherboards, cpus, gpus);
     }
+    @Bean
+    public SystemIterator systemIterator(List<Motherboard> motherboards, List<CPU> cpus, List<GPU> gpus){
+        return new SystemIterator(motherboards,cpus,gpus);
+    }
 }
