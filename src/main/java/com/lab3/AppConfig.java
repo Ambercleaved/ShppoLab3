@@ -13,12 +13,6 @@ public class AppConfig {
 
     @Bean
     @Scope("singleton")
-    public ComponentVisitor componentVisitor() {
-        return new ComponentVisitor();
-    }
-
-    @Bean
-    @Scope("singleton")
     public SystemFacade systemFacade(List<Motherboard> motherboards, List<CPU> cpus, List<GPU> gpus) {
         return new SystemFacade(motherboards, cpus, gpus);
     }
@@ -27,10 +21,5 @@ public class AppConfig {
     @Scope("singleton")
     public Menu menu(SystemFacade systemFacade, List<Motherboard> motherboards, List<CPU> cpus, List<GPU> gpus) {
         return new Menu(systemFacade, motherboards, cpus, gpus);
-    }
-    @Bean
-    @Scope("prototype")
-    public SystemIterator systemIterator(List<Motherboard> motherboards, List<CPU> cpus, List<GPU> gpus){
-        return new SystemIterator(motherboards,cpus,gpus);
     }
 }
