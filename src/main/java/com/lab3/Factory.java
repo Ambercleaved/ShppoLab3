@@ -1,9 +1,6 @@
 package com.lab3;
 
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Factory {
 
     private static int nextId = 1;

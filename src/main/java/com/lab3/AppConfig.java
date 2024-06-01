@@ -7,7 +7,6 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan("com.lab3")
 @ComponentScan("logger")
 public class AppConfig {
 
