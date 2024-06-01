@@ -29,6 +29,7 @@ public class AppConfig {
         return new Menu(systemFacade, motherboards, cpus, gpus);
     }
     @Bean
+    @Scope("prototype")
     public SystemIterator systemIterator(List<Motherboard> motherboards, List<CPU> cpus, List<GPU> gpus){
         return new SystemIterator(motherboards,cpus,gpus);
     }
